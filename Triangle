@@ -1,0 +1,23 @@
+
+public class Star {
+	public static void main(String[] args) 
+	{
+	int n = 20;
+	int i, j;
+	for(i=1; i * i <= (2 * n) + 1;i++)
+	{
+	for(j=2; j <= (2 * i)+ 1;j++){
+	System.out.print("*");
+	}
+	System.out.println();
+	}
+	for(i= n / 2; i * i>=  n + 1; i--)
+	{
+	for(j= n/2 ; j <= (2 * i) + 1; j++)
+	{
+	System.out.print("*");
+	}
+	System.out.println();
+	}
+	}
+	}
