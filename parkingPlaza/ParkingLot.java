@@ -22,28 +22,7 @@ public class ParkingLot {
         // all slots initially free
         freeParkingSlots.addAll(allParkingSlots);
     }
-
-   public Ticket parkAutomobile(Automobile Automobile) {
-        Slot targetSlot = freeParkingSlots.stream().filter(p -> p.accepts(Automobile)).findFirst()
-                .orElseThrow(() -> new RuntimeException("No free slot for " + Automobile));
-        // use stream to read the different , 
-        targetSlot.addAutomobile(Automobile);
-        if (!targetSlot.isFree()) { //if its not free remove it
-            freeParkingSlots.remove(targetSlot);
-        }
-        parkingAutomobiles.put(Automobile, targetSlot);
-        return new Ticket(Automobile);
-    }
- 
-    public void unparkAutomobile(Ticket ticket) {
-        Slot targetSlot = parkingAutomobiles.remove(ticket.getAutomobile());
-        targetSlot.remove(ticket.getAutomobile());
-        freeParkingSlots.add(targetSlot); // set keeps uniqueness
-        income += ticket.calculatePrice(CALCULATOR);
-    }
-
-    @Override
-    public String toString() {
+   public String toString() {
         return String.format("ParkingLot [income=%.2f, freeParkingSlots=%d, parkingAutomobiles=%d]", income, freeParkingSlots.size(),
                 parkingAutomobiles.size());
     }
