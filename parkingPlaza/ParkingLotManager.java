@@ -25,12 +25,12 @@ public class ParkingLotManager { //
 	        for (int i = 0; i < numberOfIterations; i++) {
 	            int nextInt = random.nextInt(1 + tickets.size());
 	            if (nextInt > tickets.size() * 2 / 3) {
-	                parkingLot.unparkAutomobile(tickets.remove(random.nextInt(tickets.size())));
+	                tickets.remove(random.nextInt(tickets.size());
 	            } else {
 	                try {
 	                    parkNewAutomobile(tickets, i);
 	                } catch (Exception e) {
-	                    System.out.println("Automobile not parked: "+e.getMessage());
+	                    System.out.println("Vehicle not parked: "+e.getMessage());
 	                }
 	            }
 	            System.out.println(parkingLot);
@@ -41,6 +41,6 @@ public class ParkingLotManager { //
 	        String AutomobileType = AutomobileTypes[new Random().nextInt(AutomobileTypes.length)];
 	        int spacesNeeded = 1 + Arrays.asList(AutomobileTypes).indexOf(AutomobileType);
 	        double priceFactor = 0.2 + (0.2 * spacesNeeded);
-	        tickets.add(parkingLot.parkAutomobile(new Automobile(AutomobileType, i, spacesNeeded, priceFactor)));
+	        parkAutomobile(new Automobile(AutomobileType, i, spacesNeeded, priceFactor)));
 	    }
 }
